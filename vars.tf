@@ -1,3 +1,5 @@
+data "aws_availability_zones" "available" {}
+
 variable "AWS_REGION" {
   default = "us-east-1"
 }
@@ -11,9 +13,12 @@ variable "AMIS" {
   }
 }
 
-variable "AWS_AZ" {
-  default = "us-east-1b"
-  B = "us-east-1b"
-  C = "us-east-1c"
-  D = "us-east-1d"
+variable "AWS_AZ_1B" {
+    default = "us-east-1b"
+}
+variable "AWS_AZ_1C" {
+    default = "us-east-1c"
+}
+variable "AWS_AZ_1D" {
+    default = "us-east-1d"
 }

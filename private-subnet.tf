@@ -3,7 +3,7 @@ resource "aws_subnet" "main-private-1" {
      vpc_id = "${aws_vpc.main.id}"
      cidr_block = "172.0.4.0/24"
      map_public_ip_on_launch = "false"
-     availability_zone = "${var.AWS_AZ[D]}"
+     availability_zone = "${data.aws_availability_zones.available.names[0]}"    
  
      tags {
          Name = "main-private-1"
@@ -14,7 +14,7 @@ resource "aws_subnet" "main-private-2" {
      vpc_id = "${aws_vpc.main.id}"
      cidr_block = "172.0.5.0/24"
      map_public_ip_on_launch = "false"
-     availability_zone = "${var.AWS_AZ[B]}"
+     availability_zone = "${data.aws_availability_zones.available.names[1]}"    
  
      tags {
          Name = "main-private-2"
@@ -25,7 +25,7 @@ resource "aws_subnet" "main-private-3" {
      vpc_id = "${aws_vpc.main.id}"
      cidr_block = "172.0.6.0/24"
      map_public_ip_on_launch = "false"
-     availability_zone = "${var.AWS_AZ[C]}"
+     availability_zone = "${data.aws_availability_zones.available.names[2]}"    
  
      tags {
          Name = "main-private-3"

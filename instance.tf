@@ -9,7 +9,7 @@ resource "aws_instance" "tf-instance" {
   vpc_security_group_ids = ["${aws_security_group.allow-ssh.id}"]
 
   # the public SSH key   ##HACK-ALERT - hardcoded path to key##
-  key_name = "${HOME}/.aws/awsterraformkey.pub"
+  #key_name = "${HOME}/.aws/awsterraformkey.pub"
 }
 
   resource "aws_ebs_volume" "ebs-volume" {
